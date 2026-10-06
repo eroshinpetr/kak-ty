@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf9f6">
+  <meta name="description" content="Как ты? — маленькая пауза для себя. Десять вопросов о твоём дне. Ответы не сохраняются и не отправляются.">
+  <title>Как ты? — маленькая пауза для себя</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="icon-back" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M5 19c-3-9 3-14 15-15 1 13-4 18-12 14M5 21 16 10"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <button class="brand" id="home-button" type="button" aria-label="Как ты? — на главную">
+        <svg class="brand-flower" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5v30M5 20h30M9.4 9.4l21.2 21.2M9.4 30.6 30.6 9.4"/></svg>
+        <span>как ты<span class="brand-question">?</span></span>
+      </button>
+      <span class="header-note">маленькая пауза для себя</span>
+      <button class="about-button" id="about-button" type="button" aria-haspopup="dialog">
+        <svg class="icon" aria-hidden="true"><use href="#icon-leaf"/></svg>
+        <span>Об опросе</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section id="landing-view" class="view landing-view" aria-labelledby="landing-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> ЕЖЕДНЕВНЫЙ ЧЕК-ИН</div>
+            <h1 id="landing-title">Как ты,<br><em>правда?</em><span class="title-star" aria-hidden="true">✳</span></h1>
+            <p class="hero-description">В потоке дел легко забыть о себе.<br class="desktop-break"> Давай на минутку остановимся<br class="desktop-break"> и прислушаемся к твоему дню.</p>
+            <div class="hero-action">
+              <button class="button button-primary button-start" id="start-button" type="button"><span id="start-label">Начать опрос</span><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button>
+              <span class="time-note"><svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg> около 3 минут</span>
+            </div>
+            <p class="privacy-note"><svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg> Ответы не сохраняются и не отправляются</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-canvas">
+              <div class="art-grain"></div>
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="art-tag"><span class="tiny-flower">✳</span> можно просто быть</div>
+              <svg class="main-illustration" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="256" cy="414" rx="128" ry="13" fill="#a99bcc" opacity=".28"/>
+                <path d="M157 359c-8 26-22 40-18 49 4 10 21 10 31 8 14-3 25-14 30-30" fill="#ede987" stroke="#34332f" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M288 365c4 21 3 39 14 47 8 6 30 6 34-4 3-9-17-26-23-46" fill="#ede987" stroke="#34332f" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M337 224c17-9 33-28 38-51 2-10 0-20 8-21 6 0 8 14 8 22 9-13 13-31 20-28 9 4-6 35-6 35 14-13 21-23 27-18 6 6-12 25-22 31 16-3 26-10 29-4 4 9-17 22-40 21-7 41-26 62-55 77" fill="#ede987" stroke="#34332f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M147 230c-36 1-48 25-44 49 2 14 10 21 22 23 16 2 31-6 44-18" fill="#ede987" stroke="#34332f" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M185 121c24-40 73-40 100-13 20-7 40 2 45 27 34 12 45 42 35 78 16 34 8 68-9 91 0 39-28 62-61 64-30 26-72 24-94 3-37 4-66-18-69-52-24-22-24-66-5-89-5-40 16-75 45-82-2-9 3-21 13-27Z" fill="#ede987" stroke="#34332f" stroke-width="3.5" stroke-linejoin="round"/>
+                <ellipse cx="210" cy="214" rx="6" ry="10" fill="#34332f"/><ellipse cx="280" cy="208" rx="6" ry="10" fill="#34332f"/>
+                <path d="M226 237c10 16 29 18 42-3" stroke="#34332f" stroke-width="4" stroke-linecap="round"/>
+                <ellipse cx="189" cy="237" rx="14" ry="8" fill="#edaf94"/><ellipse cx="301" cy="231" rx="14" ry="8" fill="#edaf94"/>
+                <path d="M177 150c4-8 11-12 18-13" stroke="#fcf9c0" stroke-width="10" stroke-linecap="round"/>
+                <path d="M205 316c29 11 54 10 79-3" stroke="#d5d276" stroke-width="3" stroke-linecap="round"/>
+                <path d="m83 139 3-20m-13 8 23 4M361 94l8-16m-14 4 19 8" stroke="#514371" stroke-width="3" stroke-linecap="round"/>
+                <path d="M90 336c-16-16-34 0-20 13l19 17 20-17c14-15-4-29-19-13Z" fill="#e8a59d" stroke="#514371" stroke-width="2.5"/>
+                <circle cx="359" cy="351" r="6" fill="#514371"/>
+                <path d="M395 323v23m-12-11h24m-20-8 16 16m-16 0 16-16" stroke="#faf6e8" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <div class="art-caption">Ты — больше,<br>чем список дел.</div>
+              <svg class="caption-scribble" viewBox="0 0 150 40"><path d="M5 16c35-8 102-7 131 3-39-3-80 0-111 8" fill="none" stroke="#665387" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="floating-note"><span class="note-heart">♡</span><span>Без правильных<br>и неправильных ответов</span></div>
+            <div class="art-bottom-label"><span class="small-dot"></span> ЭТО ПРО ТЕБЯ. И ДЛЯ ТЕБЯ.</div>
+          </div>
+        </div>
+
+        <div class="how-it-works" aria-label="Как это работает">
+          <div class="section-intro"><span class="eyebrow">НЕМНОГО ВНИМАНИЯ К СЕБЕ</span><h2>Один маленький шаг.<br>Больше ясности.</h2></div>
+          <div class="benefit"><span class="benefit-number number-lilac">01</span><div><h3>Ответь на 10 вопросов</h3><p>О настроении, энергии и том,<br>что сейчас важно для тебя.</p></div></div>
+          <div class="benefit"><span class="benefit-number number-mint">02</span><div><h3>Заметь своё состояние</h3><p>Посмотри на свой день<br>без оценок и ожиданий.</p></div></div>
+          <div class="benefit"><span class="benefit-number number-peach">03</span><div><h3>Посмотри итог</h3><p>Пойми, чего тебе хочется<br>и что может помочь сегодня.</p></div></div>
+        </div>
+        <div class="landing-bottom"><span>Каждый день разный. Любой ответ — в порядке.</span><span class="bottom-flower" aria-hidden="true">✳</span></div>
+      </section>
+
+      <section id="survey-view" class="view survey-view" aria-labelledby="question-title" hidden>
+        <div class="survey-topline"><span class="eyebrow">ТВОЯ МАЛЕНЬКАЯ ПАУЗА</span><button class="text-button" id="pause-button" type="button">На главную <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button></div>
+        <div class="survey-layout">
+          <aside class="survey-aside">
+            <p class="aside-title">Всё начинается<br>с простого<br><em>«как я?»</em></p>
+            <svg class="aside-flower" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 12v96M12 60h96M26 26l68 68M26 94l68-68" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/><circle cx="60" cy="60" r="18" fill="#faf9f6"/><circle cx="54" cy="57" r="2.4" fill="#403641"/><circle cx="66" cy="57" r="2.4" fill="#403641"/><path d="M53 66q7 7 14 0" fill="none" stroke="#403641" stroke-width="2" stroke-linecap="round"/></svg>
+            <p class="aside-note">Не торопись.<br>Выбирай то, что ближе<br>к твоему ощущению сейчас.</p>
+            <div class="aside-private"><svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg> Без сохранения ответов</div>
+          </aside>
+          <div class="question-panel">
+            <div class="progress-meta"><span id="question-number">Вопрос 01</span><span id="progress-caption">из 10</span></div>
+            <div class="progress-track" id="progress-track" aria-hidden="true"></div>
+            <form id="survey-form" autocomplete="off" novalidate>
+              <div class="question-content" id="question-content">
+                <div class="question-kicker" id="question-kicker">ПРО ТВОЙ ДЕНЬ</div>
+                <h2 id="question-title" tabindex="-1"></h2>
+                <p class="question-description" id="question-description"></p>
+                <fieldset id="answer-fieldset"><legend class="sr-only" id="answer-legend"></legend><div id="answer-options"></div></fieldset>
+                <p class="question-hint" id="question-hint"></p>
+              </div>
+              <div class="form-error" id="form-error" role="alert" hidden></div>
+              <div class="question-navigation"><button class="button button-back" id="back-button" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-back"/></svg> Назад</button><button class="button button-primary" id="next-button" type="submit"><span id="next-label">Дальше</span><svg class="icon" id="next-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg></button></div>
+              <p class="keyboard-hint" id="keyboard-hint"><kbd>1</kbd>–<kbd>5</kbd> выбрать <span>·</span> <kbd>Enter</kbd> продолжить</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="result-view" class="view result-view" aria-labelledby="result-title" hidden>
+        <div class="result-topline"><span class="result-check"><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg></span><span>Твой итог</span><span class="result-privacy">Ответы не сохраняются</span></div>
+        <div class="result-hero">
+          <div class="result-copy"><div class="eyebrow">СПАСИБО ЗА ЭТУ ПАУЗУ</div><h1 id="result-title" tabindex="-1">Ты услышал себя.</h1><p id="result-message"></p><span class="result-small-note">Это снимок твоих ответов, а не оценка тебя.<br>Завтра он может быть другим.</span></div>
+          <div class="score-card"><svg class="score-ring" viewBox="0 0 230 230" aria-hidden="true"><circle class="score-ring-track" cx="115" cy="115" r="99"/><circle class="score-ring-value" id="score-ring-value" cx="115" cy="115" r="99"/></svg><div class="score-number"><strong id="result-score">0</strong><span>из 100</span></div><p>Ощущение твоего дня</p></div>
+        </div>
+        <div class="result-details"><div class="result-support"><span class="detail-label">СЕЙЧАС ТЕБЕ ХОЧЕТСЯ</span><h2 id="result-support"></h2><p>Можно начать с чего-то совсем небольшого.<br>Пусть сегодня у тебя будет место для себя.</p><svg class="support-leaf" viewBox="0 0 120 120" aria-hidden="true"><path d="M23 104c-2-47 26-73 82-81 5 61-24 87-62 75M24 113l66-75" fill="none" stroke="#609883" stroke-width="3" stroke-linecap="round"/></svg></div><div class="result-note"><span class="detail-label">ТВОИ СЛОВА О СЕГОДНЯ</span><p id="result-note-text"></p><span class="note-decoration" aria-hidden="true">”</span></div></div>
+        <div class="result-actions"><button class="button button-primary" id="result-restart" type="button">Пройти ещё раз <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></button><button class="button button-quiet" id="result-home" type="button">На главную</button></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span class="footer-brand">как ты? <span>© 2026</span></span><span class="footer-note">С вниманием к себе.</span><span class="privacy-status"><svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg><span>Без сохранения ответов</span></span></footer>
+  </div>
+
+  <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-title">
+    <div class="about-heading"><h2 id="about-title">Пауза для себя<span>.</span></h2><button class="icon-button" id="close-about" type="button" aria-label="Закрыть описание опроса"><svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button></div>
+    <p>Десять вопросов помогут прислушаться к своему настроению, энергии и тому, чего хочется сейчас. Последний вопрос можно пропустить.</p>
+    <p>Итог отражает ответы на первые восемь вопросов. Это маленький снимок твоего дня, а не оценка тебя.</p>
+    <p class="about-privacy"><svg class="icon" aria-hidden="true"><use href="#icon-lock"/></svg><span>Ответы не сохраняются и не отправляются. Новый опрос, возврат на главную или обновление страницы очищают их.</span></p>
+  </dialog>
+  <noscript><div class="noscript-note">Для опроса нужен JavaScript. Включи его в настройках браузера и обнови страницу.</div></noscript>
+</body>
+</html>
